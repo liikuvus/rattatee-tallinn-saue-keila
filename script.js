@@ -81,6 +81,10 @@ var laagri = L.tileLayer('https://mapwarper.net/maps/tile/23029/{z}/{x}/{y}.png'
     attribution: '<a href="https://www.mnt.ee/et/ehitus/tallinn-parnu-ikla-vana-paaskula-topi-loigu-tehniline-projekt" target="_blank">Vana-Pääsküla - Urda teelõik</a>',
     opacity: 0.8
 }).addTo(map);
+var keila = L.tileLayer('https://mapwarper.net/maps/tile/23328/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://github.com/liikuvus/rattatee-tallinn-saue-keila/issues/24" target="_blank">Valingu-Keila teelõik</a>',
+    opacity: 0.8
+}).addTo(map);
 
 L.control.locate({
     strings: {
@@ -146,6 +150,7 @@ var allMapLayers = {
     'stravacycling': stravacycling,
     'topisaue': topisaue,
     'kanamavalingu': kanamavalingu,
+    'keila': keila,
     'urda': urda,
     'laagri': laagri,
     'rattatee': rattatee
@@ -168,6 +173,7 @@ L.control.layers({
     'Strava rattaga': stravacycling,
     'Topi-Saue teelõik': topisaue,
     'Kanama-Valingu teelõik': kanamavalingu,
+    'Valingu-Keila teelõik': keila,
     'Topi-Urda teelõik': urda,
     'Vana-Pääsküla - Topi teelõik': laagri,
     'Rattatee': rattatee
@@ -202,7 +208,8 @@ $(function() {
             stravarunning.setOpacity(ui.value / 100);
             stravacycling.setOpacity(ui.value / 100);
             topisaue.setOpacity(ui.value / 100);
-            kanamavalingu.setOpacity(ui.value / 100);
+	    kanamavalingu.setOpacity(ui.value / 100);
+            keila.setOpacity(ui.value / 100);
             urda.setOpacity(ui.value / 100);
         }
     });
